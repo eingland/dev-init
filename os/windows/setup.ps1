@@ -10,6 +10,7 @@ if(Test-Path C:\ProgramData\chocolatey\bin\choco.exe)
 }
 
 Write-Output "Install apps"
+winget install Microsoft.WindowsTerminal
 choco install powershell-core -y
 choco install oh-my-posh -y
 choco install git -y
@@ -41,9 +42,10 @@ Move-Item *.ttf c:\windows\fonts\
 
 Write-Output "Install configs"
 Invoke-WebRequest 
-if(!Test-Path ~\blueish.omp.json){
+if(Test-Path ~\blueish.omp.json){
+    # do nothing
+} else {
     Copy-Item ~\AppData\Local\Programs\oh-my-posh\themes\blueish.omp.json ~
 }
 Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/eingland/dev-init/main/os/windows/config/Microsoft.PowerShell_profile.ps1' -OutFile $PROFILE
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/eingland/dev-init/main/os/windows/config/settings.json' -OutFile ~\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json
-. $PROFILE
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/eingland/dev-init/main/os/windows/config/settings.json' -OutFile '~\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json'
