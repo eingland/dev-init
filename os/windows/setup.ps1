@@ -44,6 +44,6 @@ Invoke-WebRequest
 if(!Test-Path ~\blueish.omp.json){
     Copy-Item ~\AppData\Local\Programs\oh-my-posh\themes\blueish.omp.json ~
 }
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/.../Microsoft.PowerShell_profile.ps1' -OutFile $PROFILE
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/.../settings.json' -OutFile ~\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/eingland/dev-init/main/os/windows/config/Microsoft.PowerShell_profile.ps1' -OutFile $PROFILE
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/eingland/dev-init/main/os/windows/config/settings.json' -OutFile ~\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json
 . $PROFILE
