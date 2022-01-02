@@ -41,7 +41,6 @@ foreach ($file in Get-ChildItem *.ttf)
 Move-Item *.ttf c:\windows\fonts\
 
 Write-Output "Install configs"
-Invoke-WebRequest 
 if(Test-Path ~\blueish.omp.json){
     # do nothing
 } else {
@@ -49,3 +48,4 @@ if(Test-Path ~\blueish.omp.json){
 }
 Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/eingland/dev-init/main/os/windows/config/Microsoft.PowerShell_profile.ps1' -OutFile $PROFILE
 Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/eingland/dev-init/main/os/windows/config/settings.json' -OutFile '~\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/eingland/dev-init/main/os/windows/config/.gitconfig' -OutFile ~
