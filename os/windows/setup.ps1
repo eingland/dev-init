@@ -16,10 +16,15 @@ choco install oh-my-posh -y
 choco install git -y
 choco install python -y
 choco install vscode -y
-choco install nodejs-lts -y
+choco install nvm -y
 choco install googlechrome -y
 choco install firefox -y
 choco install postman -y
+cmd /c "nvm install 17.3.1 --latest-npm"
+cmd /c "nvm use 17.3.1"
+cmd /c "npm i -g yarn"
+
+
 
 Write-Output "Install Modules"
 Install-Module Terminal-Icons -Force
