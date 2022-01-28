@@ -10,16 +10,8 @@ if(Test-Path C:\ProgramData\chocolatey\bin\choco.exe)
 }
 
 Write-Output "Install apps"
-winget install Microsoft.WindowsTerminal
-choco install powershell-core -y
-choco install oh-my-posh -y
-choco install git -y
-choco install python -y
-choco install vscode -y
-choco install nvm -y
-choco install googlechrome -y
-choco install firefox -y
-choco install postman -y
+choco install packages.config -y
+
 cmd /c "nvm install 17.3.1 --latest-npm"
 cmd /c "nvm use 17.3.1"
 cmd /c "npm i -g yarn"
