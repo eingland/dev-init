@@ -10,6 +10,7 @@ if(Test-Path C:\ProgramData\chocolatey\bin\choco.exe)
 }
 
 Write-Output "Install apps"
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/eingland/dev-init/main/os/windows/packages.config' -OutFile packages.config
 choco install packages.config -y
 
 Write-Output "Install nodejs"
